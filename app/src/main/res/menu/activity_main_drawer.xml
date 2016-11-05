@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Coconut Generator Upgrades">
+        <menu>
+            <item
+                android:id="@+id/nav_gupgrade1"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Snake" />
+            <item
+                android:id="@+id/nav_gupgrade2"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Giraffe" />
+            <item
+                android:id="@+id/nav_gupgrade3"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Tiger" />
+            <item
+                android:id="@+id/nav_gupgrade4"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Parrot" />
+        </menu>
+    </item>
+
+    <item android:title="Coconut Clicker Upgrades">
+        <menu>
+            <item
+                android:id="@+id/nav_cupgrade1"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Gloves" />
+            <item
+                android:id="@+id/nav_cupgrade2"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Shovel" />
+            <item
+                android:id="@+id/nav_cupgrade3"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Chainsaw" />
+            <item
+                android:id="@+id/nav_cupgrade4"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Bulldozer" />
+            <item
+                android:id="@+id/nav_cupgrade5"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Excavator" />
+        </menu>
+    </item>
+
+</menu>

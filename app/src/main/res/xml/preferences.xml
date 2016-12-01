@@ -12,6 +12,8 @@
         android:key="pref_key_coconuts_spent"
         android:summary="-1 coconuts spent"
         android:title="@string/pref_title_coconuts_spent" />
+    <PreferenceCategory
+        android:title="Animals Tamed">
     <Preference
         android:key="pref_key_click_upgrades1"
         android:summary="-1 coconuts spent"
@@ -28,6 +30,9 @@
         android:key="pref_key_click_upgrades4"
         android:summary="-1 coconuts spent"
         android:title="Parrot" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Tools Purchased">
     <Preference
         android:key="pref_key_generate_spent0"
         android:summary="-1 coconuts spent"
@@ -48,10 +53,12 @@
         android:key="pref_key_generate_spent4"
         android:summary="-1 coconuts spent"
         android:title="Excavators" />
+    </PreferenceCategory>
     <PreferenceCategory
+        android:title="Credits">
     <Preference
         android:key="pref_key_about"
         android:summary="   Nader Kirrish\n   Apoorva Yarrabothula\n   Christian Dwyer"
         android:title="Created by" />
-    >
+    </PreferenceCategory>
 </PreferenceScreen>

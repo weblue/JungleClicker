@@ -5,4 +5,6 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Stats</string>
+
+    <string name="pref_title_total_coconuts">Total Coconuts</string>
 </resources>

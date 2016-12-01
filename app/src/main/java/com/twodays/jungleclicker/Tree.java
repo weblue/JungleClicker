@@ -12,6 +12,7 @@ public class Tree {
 
     private int totalCoconuts;
     private int timesClicked;
+    private int coconutsSpent;
 
     private int coconuts;
     int[] clickUpgrades = {1, 0, 0, 0, 0};
@@ -23,6 +24,10 @@ public class Tree {
         this.activity = activity;
 
         coconuts = 0;
+
+        totalCoconuts = 0;
+        timesClicked = 0;
+        coconutsSpent = 0;
 
         load();
 
@@ -41,7 +46,9 @@ public class Tree {
 
     public void click() {
         coconuts += calcClick();
+        totalCoconuts += calcClick();
 
+        timesClicked++;
         activity.updateView();
     }
 
@@ -52,6 +59,7 @@ public class Tree {
 
     public void generate() {
         coconuts += calcGen();
+        totalCoconuts += calcGen();
         activity.updateView();
     }
 
@@ -63,6 +71,10 @@ public class Tree {
 
     public int getCoconuts() {
         return coconuts;
+    }
+
+    public void setCoconutsSpent(int coconutsSpent) {
+        this.coconutsSpent = coconutsSpent;
     }
 
     public interface TreeListener {

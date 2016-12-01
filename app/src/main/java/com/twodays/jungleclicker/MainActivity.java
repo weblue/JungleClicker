@@ -1,5 +1,6 @@
 package com.twodays.jungleclicker;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -188,7 +189,7 @@ public class MainActivity extends AppCompatActivity
         mTextViewGenAmt.setText(formatter.format(tree.calcGen()) + " per second");
     }
 
-    public Context getCurrentContext() {
-        return getApplicationContext();
+    public Activity getCurrentActivity() {
+        return this;
     }
 }

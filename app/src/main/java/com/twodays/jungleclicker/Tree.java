@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.util.Objects;
 
@@ -23,11 +24,16 @@ public class Tree {
 
     private TreeListener activity;
     private boolean running;
+    private int prevCoconuts;
+    private int maxRate, curRate;
 
     public Tree(TreeListener activity) {
         this.activity = activity;
 
         coconuts = 0;
+        prevCoconuts = 0;
+        maxRate = 0;
+        curRate = 0;
 
         totalCoconuts = 0;
         timesClicked = 0;
@@ -103,6 +109,31 @@ public class Tree {
         return coconuts;
     }
 
+    public int getPrevCoconuts(){
+        return prevCoconuts;
+    }
+
+    public void setPrevCoconuts(int currentCoconuts){
+        this.prevCoconuts = currentCoconuts;
+    }
+
+    public int getRate(){
+        return coconuts - prevCoconuts;
+    }
+
+    public int getMaxRate(){
+        return maxRate;
+    }
+
+    public void setMaxRate(int rate){
+        this.maxRate = rate;
+    }
+
+    public void rateIncreased(){
+        Toast.makeText(activity.getCurrentActivity(), "You've just generated coconuts faster than ever! :)",
+                Toast.LENGTH_SHORT).show();
+    }
+
     public boolean canAfford(String str) {
         if (Objects.equals(str, "c1")) {
             return coconuts >= 10;
@@ -143,20 +174,8 @@ public class Tree {
         return coconutsSpent;
     }
 
-    public int getTimesClicked() {
-        return timesClicked;
-    }
-
     public void setCoconutsSpent(int coconutsSpent) {
         this.coconutsSpent = coconutsSpent;
-    }
-
-    public int[] getClickUpgrades() {
-        return clickUpgrades;
-    }
-
-    public int[] getGenUpgrades() {
-        return genUpgrades;
     }
 
     public interface TreeListener {

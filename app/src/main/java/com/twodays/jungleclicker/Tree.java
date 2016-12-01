@@ -6,12 +6,12 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.util.Objects;
 
 /**
  * Created by nader on 11/30/16.
+ *
  */
 
 class Tree {
@@ -26,7 +26,7 @@ class Tree {
     private TreeListener activity;
     private boolean running;
     private int prevCoconuts;
-    private int maxRate, curRate;
+    private int maxRate;
 
     Tree(TreeListener activity) {
         this.activity = activity;
@@ -34,7 +34,6 @@ class Tree {
         coconuts = 0;
         prevCoconuts = 0;
         maxRate = 0;
-        curRate = 0;
 
         totalCoconuts = 0;
         timesClicked = 0;
@@ -55,7 +54,6 @@ class Tree {
         editor.putInt("pref_key_coconuts", coconuts);
         editor.putInt("pref_key_times_clicked", timesClicked);
         editor.putInt("pref_key_coconuts_spent", coconutsSpent);
-        editor.putInt("pref_key_max_rate", maxRate);
         for(int i = 0;i<5;i++){
             editor.putInt("pref_key_click_upgrades"+i, clickUpgrades[i]);
             editor.putInt("pref_key_generate_spent"+i, genUpgrades[i]);
@@ -71,7 +69,6 @@ class Tree {
         coconuts = sharedPref.getInt("pref_key_coconuts", defaultValue);
         coconutsSpent = sharedPref.getInt("pref_key_coconuts_spent", defaultValue);
         timesClicked = sharedPref.getInt("pref_key_times_clicked", defaultValue);
-        maxRate = sharedPref.getInt("pref_key_max_rate", defaultValue);
         for(int i = 0;i<5;i++){
             if (i==0){
                 clickUpgrades[i]=sharedPref.getInt("pref_key_click_upgrades"+i, 1);

@@ -130,6 +130,10 @@ public class Tree {
         return coconutsSpent;
     }
 
+    public int getTimesClicked() {
+        return timesClicked;
+    }
+
     public void setCoconutsSpent(int coconutsSpent) {
         this.coconutsSpent = coconutsSpent;
     }

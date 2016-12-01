@@ -26,6 +26,6 @@ public class SettingsActivity extends PreferenceActivity {
         pref2.setSummary(MainActivity.tree.getCoconutsSpent() + " total coconuts spent.");
 
         Preference pref3 = findPreference("pref_key_times_clicked");
-        pref3.setSummary(sp.getInt("pref_key_times_clicked", 0) + " times clicked.");
+        pref3.setSummary(MainActivity.tree.getTimesClicked() + " times clicked.");
     }
 }

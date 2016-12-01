@@ -12,20 +12,14 @@
     android:background="@color/background"
     android:weightSum="1.0">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".75"
-        android:src="@drawable/tree"
-        />
-
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="vertical"
-        android:layout_weight=".25">
+>
         <TextView
+            android:id="@+id/tv_coconuts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
@@ -33,6 +27,7 @@
             android:paddingTop="10dp"
             android:text="Coconuts: 526,000"/>
         <TextView
+            android:id="@+id/tv_perclick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
@@ -40,14 +35,26 @@
             android:layout_gravity="center"
             android:text="212 per click"/>
         <TextView
+            android:id="@+id/tv_persecond"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:paddingTop="10dp"
             android:layout_gravity="center"
-            android:text="20 per second"/>
+            android:text="20 per second"
+            android:layout_marginBottom="10dp"/>
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_tree"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="0dp"
+        android:layout_weight=".75"
+        android:clickable="true"
+        android:src="@drawable/tree"
+        />
 
 
 

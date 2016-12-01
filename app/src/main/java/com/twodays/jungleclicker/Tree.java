@@ -15,11 +15,12 @@ import java.util.Objects;
 public class Tree {
 
     int[] clickUpgrades = {1, 0, 0, 0, 0};
-    int[] genUpgrades = {1, 0, 0, 0, 0};
+    int[] genUpgrades = {0, 0, 0, 0, 0};
     private int totalCoconuts;
     private int timesClicked;
     private int coconutsSpent;
     private int coconuts;
+
     private TreeListener activity;
     private boolean running;
 
@@ -136,6 +137,14 @@ public class Tree {
 
     public void setCoconutsSpent(int coconutsSpent) {
         this.coconutsSpent = coconutsSpent;
+    }
+
+    public int[] getClickUpgrades() {
+        return clickUpgrades;
+    }
+
+    public int[] getGenUpgrades() {
+        return genUpgrades;
     }
 
     public interface TreeListener {

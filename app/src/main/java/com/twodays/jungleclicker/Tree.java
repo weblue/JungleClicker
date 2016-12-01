@@ -140,7 +140,13 @@ public class Tree {
         }
         return false;
     }
+
     public void subtractCoconuts(int cost){
         coconuts = coconuts - cost;
+        coconutsSpent += cost;
+    }
+
+    public int getCoconutsSpent(){
+        return coconutsSpent;
     }
 }

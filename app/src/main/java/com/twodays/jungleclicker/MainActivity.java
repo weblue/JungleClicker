@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity
     private DecimalFormat formatter;
     private TextView mTextViewCoconuts, mTextViewClickAmt, mTextViewGenAmt;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,20 +110,52 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        /*if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.nav_gupgrade1) {
+            if(tree.canAfford("c1")){
+                tree.clickUpgrades[1]=tree.clickUpgrades[1]++;
+                tree.subtractCoconuts(10);
+            }
+        } else if (id == R.id.nav_gupgrade2) {
+            if(tree.canAfford("c2")){
+                tree.clickUpgrades[2]=tree.clickUpgrades[2]++;
+                tree.subtractCoconuts(100);
+            }
+        } else if (id == R.id.nav_gupgrade3) {
+            if(tree.canAfford("c3")){
+                tree.clickUpgrades[3]=tree.clickUpgrades[3]++;
+                tree.subtractCoconuts(1000);
+            }
+        } else if (id == R.id.nav_gupgrade4) {
+            if(tree.canAfford("c4")){
+                tree.clickUpgrades[4]=tree.clickUpgrades[4]++;
+                tree.subtractCoconuts(10000);
+            }
+        } else if (id == R.id.nav_cupgrade1) {
+            if(tree.canAfford("g1")){
+                tree.genUpgrades[0]=tree.genUpgrades[0]++;
+                tree.subtractCoconuts(100);
+            }
+        } else if (id == R.id.nav_cupgrade2) {
+            if(tree.canAfford("g2")){
+                tree.genUpgrades[1]=tree.genUpgrades[1]++;
+                tree.subtractCoconuts(1000);
+            }
+        }else if (id == R.id.nav_cupgrade3) {
+            if(tree.canAfford("g3")){
+                tree.genUpgrades[2]=tree.genUpgrades[2]++;
+                tree.subtractCoconuts(10000);
+            }
+        } else if (id == R.id.nav_cupgrade4) {
+            if(tree.canAfford("g4")){
+                tree.genUpgrades[3]=tree.genUpgrades[3]++;
+                tree.subtractCoconuts(100000);
+            }
+        }else if (id == R.id.nav_cupgrade5) {
+            if(tree.canAfford("g5")){
+                tree.genUpgrades[4]=tree.genUpgrades[4]++;
+                tree.subtractCoconuts(1000000);
+            }
         }
-*/
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

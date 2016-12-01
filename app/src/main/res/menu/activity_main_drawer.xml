@@ -6,19 +6,19 @@
             <item
                 android:id="@+id/nav_gupgrade1"
                 android:icon="@drawable/snake"
-                android:title="Snake" />
+                android:title="Snake - Cost:10" />
             <item
                 android:id="@+id/nav_gupgrade2"
                 android:icon="@drawable/giraffe"
-                android:title="Giraffe" />
+                android:title="Giraffe - Cost:100" />
             <item
                 android:id="@+id/nav_gupgrade3"
                 android:icon="@drawable/tiger"
-                android:title="Tiger" />
+                android:title="Tiger - Cost:1000" />
             <item
                 android:id="@+id/nav_gupgrade4"
                 android:icon="@drawable/parrot"
-                android:title="Parrot" />
+                android:title="Parrot - Cost:10000" />
         </menu>
     </item>
 
@@ -27,23 +27,23 @@
             <item
                 android:id="@+id/nav_cupgrade1"
                 android:icon="@drawable/gloves"
-                android:title="Gloves" />
+                android:title="Gloves - Cost:100" />
             <item
                 android:id="@+id/nav_cupgrade2"
                 android:icon="@drawable/shovel"
-                android:title="Shovel" />
+                android:title="Shovel - Cost:1000" />
             <item
                 android:id="@+id/nav_cupgrade3"
                 android:icon="@drawable/chainsaw"
-                android:title="Chainsaw" />
+                android:title="Chainsaw - Cost:10000" />
             <item
                 android:id="@+id/nav_cupgrade4"
                 android:icon="@drawable/bulldozer"
-                android:title="Bulldozer" />
+                android:title="Bulldozer - Cost:100000" />
             <item
                 android:id="@+id/nav_cupgrade5"
                 android:icon="@drawable/excavator"
-                android:title="Excavator" />
+                android:title="Excavator - Cost:1000000" />
         </menu>
     </item>
 

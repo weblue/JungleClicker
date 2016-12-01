@@ -173,6 +173,7 @@ public class MainActivity extends AppCompatActivity
             }
             else Toast.makeText(getApplicationContext(), "Cannot Afford Excavator", Toast.LENGTH_SHORT).show();
         }
+        updateView();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         assert drawer != null;
         drawer.closeDrawer(GravityCompat.START);

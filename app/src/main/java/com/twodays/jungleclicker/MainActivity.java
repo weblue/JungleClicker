@@ -14,6 +14,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -49,12 +52,17 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        ImageView tree = (ImageView) findViewById(R.id.iv_tree);
-        tree.setOnClickListener(new View.OnClickListener() {
+        final TextView mTextViewCoconuts = (TextView) findViewById(R.id.tv_coconuts);
+
+        final DecimalFormat formatter = new DecimalFormat("###,###,###,###");
+
+        ImageView imageViewTree = (ImageView) findViewById(R.id.iv_tree);
+        imageViewTree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shift));
-
+                tree.inc();
+                mTextViewCoconuts.setText(formatter.format(Integer.toString(tree.getCoconuts())));
             }
         });
     }

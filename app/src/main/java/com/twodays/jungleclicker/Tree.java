@@ -6,7 +6,7 @@ package com.twodays.jungleclicker;
 
 public class Tree {
 
-    int coconuts;
+    private int coconuts;
     int[] clickUpgrades = {0, 0, 0, 0, 0};
     int[] genUpgrades = {0, 0, 0, 0, 0};
 
@@ -24,9 +24,12 @@ public class Tree {
 
     }
 
-    public void inc(int amount) {
-        coconuts += amount;
+    public void inc() {
+
     }
 
 
+    public int getCoconuts() {
+        return coconuts;
+    }
 }

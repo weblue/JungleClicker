@@ -1,5 +1,6 @@
 package com.twodays.jungleclicker;
 
+import android.content.Context;
 import android.os.AsyncTask;
 
 import java.util.Objects;
@@ -10,13 +11,12 @@ import java.util.Objects;
 
 public class Tree {
 
+    int[] clickUpgrades = {1, 0, 0, 0, 0};
+    int[] genUpgrades = {1, 0, 0, 0, 0};
     private int totalCoconuts;
     private int timesClicked;
     private int coconutsSpent;
-
     private int coconuts;
-    int[] clickUpgrades = {1, 0, 0, 0, 0};
-    int[] genUpgrades = {1, 0, 0, 0, 0};
     private TreeListener activity;
     private boolean running;
 
@@ -73,21 +73,61 @@ public class Tree {
         return coconuts;
     }
 
+    public boolean canAfford(String str) {
+        if (Objects.equals(str, "c1")) {
+            return coconuts >= 10;
+        }
+        if (Objects.equals(str, "c2")) {
+            return coconuts >= 100;
+        }
+        if (Objects.equals(str, "c3")) {
+            return coconuts >= 1000;
+        }
+        if (Objects.equals(str, "c4")) {
+            return coconuts >= 10000;
+        }
+        if (Objects.equals(str, "g1")) {
+            return coconuts >= 100;
+        }
+        if (Objects.equals(str, "g2")) {
+            return coconuts >= 1000;
+        }
+        if (Objects.equals(str, "g3")) {
+            return coconuts >= 10000;
+        }
+        if (Objects.equals(str, "g4")) {
+            return coconuts >= 100000;
+        }
+        if (Objects.equals(str, "g5")) {
+            return coconuts >= 1000000;
+        }
+        return false;
+    }
+
+    public void subtractCoconuts(int cost) {
+        coconuts = coconuts - cost;
+        coconutsSpent += cost;
+    }
+
+    public int getCoconutsSpent() {
+        return coconutsSpent;
+    }
+
     public void setCoconutsSpent(int coconutsSpent) {
         this.coconutsSpent = coconutsSpent;
     }
 
     public interface TreeListener {
         void updateView();
+        Context getContext();
     }
-
 
     public class TreeAsyncTask extends AsyncTask<Integer, Integer, Void> {
         @Override
         protected Void doInBackground(Integer... params) {
             int interval = 1000;
 
-            while(running){
+            while (running) {
                 try {
                     publishProgress();
                     Thread.sleep(interval);
@@ -108,45 +148,5 @@ public class Tree {
             MainActivity.tree.generate();
             super.onProgressUpdate(values);
         }
-    }
-
-    public boolean canAfford(String str){
-        if(Objects.equals(str, "c1")){
-            return coconuts >= 10;
-        }
-        if (Objects.equals(str, "c2")){
-            return coconuts >= 100;
-        }
-        if (Objects.equals(str, "c3")){
-            return coconuts >= 1000;
-        }
-        if (Objects.equals(str, "c4")){
-            return coconuts >= 10000;
-        }
-        if (Objects.equals(str, "g1")){
-            return coconuts >= 100;
-        }
-        if (Objects.equals(str, "g2")){
-            return coconuts >= 1000;
-        }
-        if (Objects.equals(str, "g3")){
-            return coconuts >= 10000;
-        }
-        if (Objects.equals(str, "g4")){
-            return coconuts >= 100000;
-        }
-        if (Objects.equals(str, "g5")){
-            return coconuts >= 1000000;
-        }
-        return false;
-    }
-
-    public void subtractCoconuts(int cost){
-        coconuts = coconuts - cost;
-        coconutsSpent += cost;
-    }
-
-    public int getCoconutsSpent(){
-        return coconutsSpent;
     }
 }

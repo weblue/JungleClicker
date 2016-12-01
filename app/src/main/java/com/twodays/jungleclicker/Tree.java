@@ -17,18 +17,16 @@ public class Tree {
     int[] clickUpgrades = {1, 0, 0, 0, 0};
     int[] genUpgrades = {1, 0, 0, 0, 0};
     private TreeListener activity;
- //   private TreeListener.TreeAsyncTask treeAsyncTask;
+    private boolean running;
 
     public Tree(TreeListener activity) {
         this.activity = activity;
-
-  //      treeAsyncTask = new TreeListener.TreeAsyncTask();
-   //     treeAsyncTask.execute();
 
         coconuts = 0;
 
         load();
 
+        running = true;
         TreeAsyncTask treeAsyncTask = new TreeAsyncTask();
         treeAsyncTask.execute();
     }
@@ -77,13 +75,14 @@ public class Tree {
         protected Void doInBackground(Integer... params) {
             int interval = 1000;
 
-            try {
-                publishProgress();
-                Thread.sleep(interval);
-            } catch (Exception ex) {
-                ex.printStackTrace();
+            while(running){
+                try {
+                    publishProgress();
+                    Thread.sleep(interval);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
             }
-
             return null;
         }
 
@@ -98,8 +97,6 @@ public class Tree {
             super.onProgressUpdate(values);
         }
     }
-
-    //TreeAsyncTask treeAsyncTask = new TreeAsyncTask();
 
     public boolean canAfford(String str){
         if(Objects.equals(str, "c1")){

@@ -178,6 +178,18 @@ public class Tree {
         this.coconutsSpent = coconutsSpent;
     }
 
+    public int getTimesClicked() {
+        return timesClicked;
+    }
+
+    public int[] getClickUpgrades() {
+        return clickUpgrades;
+    }
+
+    public int[] getGenUpgrades() {
+        return genUpgrades;
+    }
+
     public interface TreeListener {
         void updateView();
         Activity getCurrentActivity();

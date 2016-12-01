@@ -14,9 +14,13 @@ public class Tree {
     int[] clickUpgrades = {1, 0, 0, 0, 0};
     int[] genUpgrades = {0, 0, 0, 0, 0};
     private TreeListener activity;
+    private TreeListener.TreeAsyncTask treeAsyncTask;
 
     public Tree(TreeListener activity) {
         this.activity = activity;
+
+        treeAsyncTask = new TreeListener.TreeAsyncTask();
+        treeAsyncTask.execute();
 
         coconuts = 0;
 
@@ -45,7 +49,7 @@ public class Tree {
     }
 
     public void generate() {
-
+        coconuts += calcGen();
         activity.updateView();
     }
 
@@ -66,35 +70,25 @@ public class Tree {
             @Override
             protected Void doInBackground(Integer... params) {
                 int interval = 1000;
-//                while(!reset){
-//                    if(!clockStopped){
+
                         try {
-                            int coconuts = MainActivity.tree.getCoconuts();
-                            publishProgress(coconuts);
+                            publishProgress();
                             Thread.sleep(interval);
                         } catch (Exception ex) {
                             ex.printStackTrace();
                         }
-//                    }
-//                }
+
                 return null;
             }
 
             @Override
             protected void onPostExecute(Void avoid) {
                 super.onPostExecute(avoid);
-                /*String restartTime = getTime(0, 0, 0);
-                time.setText(restartTime);
-                clock.setHours(0);
-                clock.setMinutes(0);
-                clock.setSeconds(0);*/
             }
 
             @Override
             protected void onProgressUpdate(Integer... values) {
-
-                /*String curTime = getTime(values[0], values[1], values[2]);
-                time.setText(curTime);*/
+                MainActivity.tree.generate();
                 super.onProgressUpdate(values);
             }
         }

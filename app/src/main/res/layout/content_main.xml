@@ -19,6 +19,8 @@
         android:orientation="vertical"
         android:layout_weight=".25">
         <TextView
+            android:fontFamily="casual"
+            android:textStyle="bold"
             android:id="@+id/tv_coconuts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,6 +30,8 @@
             android:text="Coconuts: 526,000"/>
         <TextView
             android:id="@+id/tv_perclick"
+            android:fontFamily="casual"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
@@ -36,6 +40,8 @@
             android:text="212 per click"/>
         <TextView
             android:id="@+id/tv_persecond"
+            android:fontFamily="casual"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"

@@ -55,6 +55,7 @@ class Tree {
         editor.putInt("pref_key_coconuts", coconuts);
         editor.putInt("pref_key_times_clicked", timesClicked);
         editor.putInt("pref_key_coconuts_spent", coconutsSpent);
+        editor.putInt("pref_key_max_rate", maxRate);
         for(int i = 0;i<5;i++){
             editor.putInt("pref_key_click_upgrades"+i, clickUpgrades[i]);
             editor.putInt("pref_key_generate_spent"+i, genUpgrades[i]);
@@ -70,6 +71,7 @@ class Tree {
         coconuts = sharedPref.getInt("pref_key_coconuts", defaultValue);
         coconutsSpent = sharedPref.getInt("pref_key_coconuts_spent", defaultValue);
         timesClicked = sharedPref.getInt("pref_key_times_clicked", defaultValue);
+        maxRate = sharedPref.getInt("pref_key_max_rate", defaultValue);
         for(int i = 0;i<5;i++){
             if (i==0){
                 clickUpgrades[i]=sharedPref.getInt("pref_key_click_upgrades"+i, 1);

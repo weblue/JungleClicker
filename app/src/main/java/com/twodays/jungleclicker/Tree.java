@@ -2,6 +2,8 @@ package com.twodays.jungleclicker;
 
 import android.os.AsyncTask;
 
+import java.util.Objects;
+
 /**
  * Created by nader on 11/30/16.
  */
@@ -98,41 +100,32 @@ public class Tree {
         }
     }
     public boolean canAfford(String str){
-        if(str == "c1"){
-            if(coconuts>=10) return true;
-            else return false;
+        if(Objects.equals(str, "c1")){
+            return coconuts >= 10;
         }
-        if (str=="c2"){
-            if(coconuts>=100) return true;
-            else return false;
+        if (Objects.equals(str, "c2")){
+            return coconuts >= 100;
         }
-        if (str=="c3"){
-            if(coconuts>=1000) return true;
-            else return false;
+        if (Objects.equals(str, "c3")){
+            return coconuts >= 1000;
         }
-        if (str=="c4"){
-            if(coconuts>=10000) return true;
-            else return false;
+        if (Objects.equals(str, "c4")){
+            return coconuts >= 10000;
         }
-        if (str=="g1"){
-            if(coconuts>=100) return true;
-            else return false;
+        if (Objects.equals(str, "g1")){
+            return coconuts >= 100;
         }
-        if (str=="g2"){
-            if(coconuts>=1000) return true;
-            else return false;
+        if (Objects.equals(str, "g2")){
+            return coconuts >= 1000;
         }
-        if (str=="g3"){
-            if(coconuts>=10000) return true;
-            else return false;
+        if (Objects.equals(str, "g3")){
+            return coconuts >= 10000;
         }
-        if (str=="g4"){
-            if(coconuts>=100000) return true;
-            else return false;
+        if (Objects.equals(str, "g4")){
+            return coconuts >= 100000;
         }
-        if (str=="g5"){
-            if(coconuts>=1000000) return true;
-            else return false;
+        if (Objects.equals(str, "g5")){
+            return coconuts >= 1000000;
         }
         return false;
     }

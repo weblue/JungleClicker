@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity
 
     public static Tree tree;
     private DecimalFormat formatter;
-    private TextView mTextViewCoconuts;
+    private TextView mTextViewCoconuts, mTextViewClickAmt, mTextViewGenAmt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity
 
         formatter = new DecimalFormat("###,###,###,###");
         mTextViewCoconuts = (TextView) findViewById(R.id.tv_coconuts);
+        mTextViewClickAmt = (TextView) findViewById(R.id.tv_perclick);
+        mTextViewGenAmt = (TextView) findViewById(R.id.tv_persecond);
 
         mTextViewCoconuts.setText(formatter.format(tree.getCoconuts()));
 
@@ -128,6 +130,7 @@ public class MainActivity extends AppCompatActivity
 
     public void updateView() {
         //TODO update clicker total
-        mTextViewCoconuts.setText(formatter.format(tree.getCoconuts()));
+        mTextViewCoconuts.setText("Coconuts: " + formatter.format(tree.getCoconuts()));
+        mTextViewGenAmt.setText(formatter.format(tree.calcClick()) + " per click");
     }
 }

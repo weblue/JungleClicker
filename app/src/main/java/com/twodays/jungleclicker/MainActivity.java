@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -116,7 +117,7 @@ public class MainActivity extends AppCompatActivity
                 Log.d("test", "c1 is true");
                 tree.clickUpgrades[1]++;
                 tree.subtractCoconuts(10);
-                Toast.makeText(getApplicationContext(), "Snake Purchased", Toast.LENGTH_SHORT).show();
+                Snackbar.makeText(getApplicationContext(), "Snake Purchased", Snackbar.LENGTH_SHORT).show();
             } else
                 Toast.makeText(getApplicationContext(), "Cannot Afford Snake", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_gupgrade2) {

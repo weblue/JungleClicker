@@ -8,7 +8,7 @@
         android:key="pref_key_times_clicked"
         android:title="@string/pref_title_times_clicked" />
     <Preference
-        android:dependency="pref_key_times_clicked"
+        android:dependency="pref_key_coconuts_spent"
         android:key="pref_key_coconuts_spent"
         android:title="@string/pref_title_coconuts_spent" />-->
     <Preference

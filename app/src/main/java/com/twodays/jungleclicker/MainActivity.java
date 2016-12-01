@@ -21,7 +21,7 @@ import java.text.DecimalFormat;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, Tree.TreeListener {
 
-    private Tree tree;
+    public static Tree tree;
     private DecimalFormat formatter;
     private TextView mTextViewCoconuts, mTextViewClickAmt, mTextViewGenAmt;
 

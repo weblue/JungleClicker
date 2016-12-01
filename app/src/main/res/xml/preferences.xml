@@ -16,7 +16,6 @@
         android:summary="@string/pref_summary_delete_limit"
         android:title="@string/pref_title_mms_delete" />-->
     <Preference
-        android:dependency="pref_key_auto_delete"
         android:key="pref_key_about"
         android:summary="   Nader Kirrish\n   Apoorva Yarrabothula\n   Christian Dwyer"
         android:title="Created by" />

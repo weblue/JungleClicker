@@ -47,7 +47,7 @@ public class Tree {
     }
 
     public void generate() {
-
+        coconuts += calcGen();
         activity.updateView();
     }
 
@@ -70,9 +70,7 @@ public class Tree {
                 int interval = 1000;
 
                         try {
-                            int coconuts = MainActivity.tree.getCoconuts();
-                            coconuts += MainActivity.tree.calcGen();
-                            publishProgress(coconuts);
+                            publishProgress();
                             Thread.sleep(interval);
                         } catch (Exception ex) {
                             ex.printStackTrace();
@@ -88,7 +86,7 @@ public class Tree {
 
             @Override
             protected void onProgressUpdate(Integer... values) {
-                MainActivity.tree.coconuts = values[0];
+                MainActivity.tree.generate();
                 super.onProgressUpdate(values);
             }
         }

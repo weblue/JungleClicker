@@ -1,5 +1,7 @@
 package com.twodays.jungleclicker;
 
+import android.os.AsyncTask;
+
 /**
  * Created by nader on 11/30/16.
  */
@@ -17,6 +19,8 @@ public class Tree {
         coconuts = 0;
 
         load();
+
+
     }
 
     public void save() {
@@ -46,5 +50,42 @@ public class Tree {
 
     public interface TreeListener {
         void updateView();
+
+        public class TreeAsyncTask extends AsyncTask<Integer, Integer, Void> {
+            @Override
+            protected Void doInBackground(Integer... params) {
+                int interval = 1000;
+//                while(!reset){
+//                    if(!clockStopped){
+                        try {
+                            int coconuts = MainActivity.tree.getCoconuts();
+                            publishProgress(coconuts);
+                            Thread.sleep(interval);
+                        } catch (Exception ex) {
+                            ex.printStackTrace();
+                        }
+//                    }
+//                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void avoid) {
+                super.onPostExecute(avoid);
+                /*String restartTime = getTime(0, 0, 0);
+                time.setText(restartTime);
+                clock.setHours(0);
+                clock.setMinutes(0);
+                clock.setSeconds(0);*/
+            }
+
+            @Override
+            protected void onProgressUpdate(Integer... values) {
+
+                /*String curTime = getTime(values[0], values[1], values[2]);
+                time.setText(curTime);*/
+                super.onProgressUpdate(values);
+            }
+        }
     }
 }

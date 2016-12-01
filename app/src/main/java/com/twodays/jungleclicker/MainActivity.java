@@ -164,6 +164,7 @@ public class MainActivity extends AppCompatActivity
                 Toast.makeText(getApplicationContext(), "Excavator Purchased", Toast.LENGTH_SHORT).show();
             }
         }
+        updateView();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         assert drawer != null;
         drawer.closeDrawer(GravityCompat.START);

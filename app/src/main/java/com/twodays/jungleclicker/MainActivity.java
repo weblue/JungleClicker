@@ -184,6 +184,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void updateView() {
+        tree.save();
         mTextViewCoconuts.setText("Coconuts: " + formatter.format(tree.getCoconuts()));
         mTextViewClickAmt.setText(formatter.format(tree.calcClick()) + " per click");
         mTextViewGenAmt.setText(formatter.format(tree.calcGen()) + " per second");

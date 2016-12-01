@@ -3,6 +3,7 @@ package com.twodays.jungleclicker;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -108,47 +109,48 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_gupgrade1) {
             if(tree.canAfford("c1")){
-                tree.clickUpgrades[1]=tree.clickUpgrades[1]++;
+                Log.d("test","c1 is true");
+                tree.clickUpgrades[1]++;
                 tree.subtractCoconuts(10);
             }
         } else if (id == R.id.nav_gupgrade2) {
             if(tree.canAfford("c2")){
-                tree.clickUpgrades[2]=tree.clickUpgrades[2]++;
+                tree.clickUpgrades[2]++;
                 tree.subtractCoconuts(100);
             }
         } else if (id == R.id.nav_gupgrade3) {
             if(tree.canAfford("c3")){
-                tree.clickUpgrades[3]=tree.clickUpgrades[3]++;
+                tree.clickUpgrades[3]++;
                 tree.subtractCoconuts(1000);
             }
         } else if (id == R.id.nav_gupgrade4) {
             if(tree.canAfford("c4")){
-                tree.clickUpgrades[4]=tree.clickUpgrades[4]++;
+                tree.clickUpgrades[4]++;
                 tree.subtractCoconuts(10000);
             }
         } else if (id == R.id.nav_cupgrade1) {
             if(tree.canAfford("g1")){
-                tree.genUpgrades[0]=tree.genUpgrades[0]++;
+                tree.genUpgrades[0]++;
                 tree.subtractCoconuts(100);
             }
         } else if (id == R.id.nav_cupgrade2) {
             if(tree.canAfford("g2")){
-                tree.genUpgrades[1]=tree.genUpgrades[1]++;
+                tree.genUpgrades[1]++;
                 tree.subtractCoconuts(1000);
             }
         }else if (id == R.id.nav_cupgrade3) {
             if(tree.canAfford("g3")){
-                tree.genUpgrades[2]=tree.genUpgrades[2]++;
+                tree.genUpgrades[2]++;
                 tree.subtractCoconuts(10000);
             }
         } else if (id == R.id.nav_cupgrade4) {
             if(tree.canAfford("g4")){
-                tree.genUpgrades[3]=tree.genUpgrades[3]++;
+                tree.genUpgrades[3]++;
                 tree.subtractCoconuts(100000);
             }
         }else if (id == R.id.nav_cupgrade5) {
             if(tree.canAfford("g5")){
-                tree.genUpgrades[4]=tree.genUpgrades[4]++;
+                tree.genUpgrades[4]++;
                 tree.subtractCoconuts(1000000);
             }
         }

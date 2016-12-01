@@ -188,8 +188,7 @@ public class MainActivity extends AppCompatActivity
         mTextViewGenAmt.setText(formatter.format(tree.calcGen()) + " per second");
     }
 
-    public Context getContext() {
-        return getContext();
+    public Context getCurrentContext() {
+        return getApplicationContext();
     }
-
 }

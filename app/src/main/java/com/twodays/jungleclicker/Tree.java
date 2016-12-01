@@ -119,7 +119,7 @@ public class Tree {
 
     public interface TreeListener {
         void updateView();
-        Context getContext();
+        Context getCurrentContext();
     }
 
     public class TreeAsyncTask extends AsyncTask<Integer, Integer, Void> {

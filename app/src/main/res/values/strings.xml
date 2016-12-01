@@ -7,4 +7,7 @@
     <string name="action_settings">Stats</string>
 
     <string name="pref_title_total_coconuts">Total Coconuts</string>
+    <string name="pref_title_times_clicked">Total Times Clicked</string>
+    <string name="pref_title_coconuts_spent">Coconuts Spent</string>
+
 </resources>

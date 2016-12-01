@@ -1,19 +1,18 @@
 package com.twodays.jungleclicker;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -112,69 +111,69 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_gupgrade1) {
-            if(tree.canAfford("c1")){
-                Log.d("test","c1 is true");
+            if (tree.canAfford("c1")) {
+                Log.d("test", "c1 is true");
                 tree.clickUpgrades[1]++;
                 tree.subtractCoconuts(10);
                 Toast.makeText(getApplicationContext(), "Snake Purchased", Toast.LENGTH_SHORT).show();
-            }
-            else Toast.makeText(getApplicationContext(), "Cannot Afford Snake", Toast.LENGTH_SHORT).show();
+            } else
+                Toast.makeText(getApplicationContext(), "Cannot Afford Snake", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_gupgrade2) {
-            if(tree.canAfford("c2")){
+            if (tree.canAfford("c2")) {
                 tree.clickUpgrades[2]++;
                 tree.subtractCoconuts(100);
                 Toast.makeText(getApplicationContext(), "Giraffe Purchased", Toast.LENGTH_SHORT).show();
-            }
-            else Toast.makeText(getApplicationContext(), "Cannot Afford Giraffe", Toast.LENGTH_SHORT).show();
+            } else
+                Toast.makeText(getApplicationContext(), "Cannot Afford Giraffe", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_gupgrade3) {
-            if(tree.canAfford("c3")){
+            if (tree.canAfford("c3")) {
                 tree.clickUpgrades[3]++;
                 tree.subtractCoconuts(1000);
                 Toast.makeText(getApplicationContext(), "Tiger Purchased", Toast.LENGTH_SHORT).show();
-            }
-            else Toast.makeText(getApplicationContext(), "Cannot Afford Tiger", Toast.LENGTH_SHORT).show();
+            } else
+                Toast.makeText(getApplicationContext(), "Cannot Afford Tiger", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_gupgrade4) {
-            if(tree.canAfford("c4")){
+            if (tree.canAfford("c4")) {
                 tree.clickUpgrades[4]++;
                 tree.subtractCoconuts(10000);
                 Toast.makeText(getApplicationContext(), "Parrot Purchased", Toast.LENGTH_SHORT).show();
-            }
-            else Toast.makeText(getApplicationContext(), "Cannot Afford Parrot", Toast.LENGTH_SHORT).show();
+            } else
+                Toast.makeText(getApplicationContext(), "Cannot Afford Parrot", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_cupgrade1) {
-            if(tree.canAfford("g1")){
+            if (tree.canAfford("g1")) {
                 tree.genUpgrades[0]++;
                 tree.subtractCoconuts(100);
                 Toast.makeText(getApplicationContext(), "Gloves Purchased", Toast.LENGTH_SHORT).show();
-            }
-            else Toast.makeText(getApplicationContext(), "Cannot Afford Gloves", Toast.LENGTH_SHORT).show();
+            } else
+                Toast.makeText(getApplicationContext(), "Cannot Afford Gloves", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_cupgrade2) {
-            if(tree.canAfford("g2")){
+            if (tree.canAfford("g2")) {
                 tree.genUpgrades[1]++;
                 tree.subtractCoconuts(1000);
                 Toast.makeText(getApplicationContext(), "Shovel Purchased", Toast.LENGTH_SHORT).show();
-            }
-            else Toast.makeText(getApplicationContext(), "Cannot Afford Shovel", Toast.LENGTH_SHORT).show();
-        }else if (id == R.id.nav_cupgrade3) {
-            if(tree.canAfford("g3")){
+            } else
+                Toast.makeText(getApplicationContext(), "Cannot Afford Shovel", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_cupgrade3) {
+            if (tree.canAfford("g3")) {
                 tree.genUpgrades[2]++;
                 tree.subtractCoconuts(10000);
                 Toast.makeText(getApplicationContext(), "Chainsaw Purchased", Toast.LENGTH_SHORT).show();
-            }
-            else Toast.makeText(getApplicationContext(), "Cannot Afford Chainsaw", Toast.LENGTH_SHORT).show();
+            } else
+                Toast.makeText(getApplicationContext(), "Cannot Afford Chainsaw", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_cupgrade4) {
-            if(tree.canAfford("g4")){
+            if (tree.canAfford("g4")) {
                 tree.genUpgrades[3]++;
                 tree.subtractCoconuts(100000);
                 Toast.makeText(getApplicationContext(), "Bulldozer Purchased", Toast.LENGTH_SHORT).show();
-            }
-            else Toast.makeText(getApplicationContext(), "Cannot Afford Bulldozer", Toast.LENGTH_SHORT).show();
-        }else if (id == R.id.nav_cupgrade5) {
-            if(tree.canAfford("g5")){
+            } else
+                Toast.makeText(getApplicationContext(), "Cannot Afford Bulldozer", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_cupgrade5) {
+            if (tree.canAfford("g5")) {
                 tree.genUpgrades[4]++;
                 tree.subtractCoconuts(1000000);
                 Toast.makeText(getApplicationContext(), "Excavator Purchased", Toast.LENGTH_SHORT).show();
-            }
-            else Toast.makeText(getApplicationContext(), "Cannot Afford Excavator", Toast.LENGTH_SHORT).show();
+            } else
+                Toast.makeText(getApplicationContext(), "Cannot Afford Excavator", Toast.LENGTH_SHORT).show();
         }
         updateView();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -188,5 +187,9 @@ public class MainActivity extends AppCompatActivity
         mTextViewCoconuts.setText("Coconuts: " + formatter.format(tree.getCoconuts()));
         mTextViewClickAmt.setText(formatter.format(tree.calcClick()) + " per click");
         mTextViewGenAmt.setText(formatter.format(tree.calcGen()) + " per second");
+    }
+
+    public Context getCurrentContext() {
+        return getApplicationContext();
     }
 }

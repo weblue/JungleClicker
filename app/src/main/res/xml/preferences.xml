@@ -30,23 +30,23 @@
     <Preference
         android:key="pref_key_generate_spent0"
         android:summary="-1 coconuts spent"
-        android:title="@string/pref_title_coconuts_spent" />
+        android:title="Gloves" />
     <Preference
         android:key="pref_key_generate_spent1"
         android:summary="-1 coconuts spent"
-        android:title="@string/pref_title_coconuts_spent" />
+        android:title="Shovels" />
     <Preference
         android:key="pref_key_generate_spent2"
         android:summary="-1 coconuts spent"
-        android:title="@string/pref_title_coconuts_spent" />
+        android:title="Chainsaws" />
     <Preference
         android:key="pref_key_generate_spent3"
         android:summary="-1 coconuts spent"
-        android:title="@string/pref_title_coconuts_spent" />
+        android:title="Bulldozers" />
     <Preference
         android:key="pref_key_generate_spent4"
         android:summary="-1 coconuts spent"
-        android:title="@string/pref_title_coconuts_spent" />
+        android:title="Excavators" />
     <Preference
         android:key="pref_key_about"
         android:summary="   Nader Kirrish\n   Apoorva Yarrabothula\n   Christian Dwyer"

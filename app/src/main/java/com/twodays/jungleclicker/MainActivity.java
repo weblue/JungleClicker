@@ -117,65 +117,66 @@ public class MainActivity extends AppCompatActivity
                 Log.d("test", "c1 is true");
                 tree.clickUpgrades[1]++;
                 tree.subtractCoconuts(10);
-                Snackbar.makeText(getApplicationContext(), "Snake Purchased", Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content).getRootView(), "Snake Purchased", Snackbar.LENGTH_SHORT).show();
             } else
-                Toast.makeText(getApplicationContext(), "Cannot Afford Snake", Toast.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content).getRootView(), "Cannot Afford Snake", Snackbar.LENGTH_SHORT).show();
+
         } else if (id == R.id.nav_gupgrade2) {
             if (tree.canAfford("c2")) {
                 tree.clickUpgrades[2]++;
                 tree.subtractCoconuts(100);
-                Toast.makeText(getApplicationContext(), "Giraffe Purchased", Toast.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content).getRootView(), "Giraffe Purchased", Snackbar.LENGTH_SHORT).show();
             } else
-                Toast.makeText(getApplicationContext(), "Cannot Afford Giraffe", Toast.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content).getRootView(), "Cannot Afford Giraffe", Snackbar.LENGTH_SHORT).show();
         } else if (id == R.id.nav_gupgrade3) {
             if (tree.canAfford("c3")) {
                 tree.clickUpgrades[3]++;
                 tree.subtractCoconuts(1000);
-                Toast.makeText(getApplicationContext(), "Tiger Purchased", Toast.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content).getRootView(), "Tiger Purchased", Snackbar.LENGTH_SHORT).show();
             } else
-                Toast.makeText(getApplicationContext(), "Cannot Afford Tiger", Toast.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content).getRootView(), "Cannot Afford Tiger", Snackbar.LENGTH_SHORT).show();
         } else if (id == R.id.nav_gupgrade4) {
             if (tree.canAfford("c4")) {
                 tree.clickUpgrades[4]++;
                 tree.subtractCoconuts(10000);
-                Toast.makeText(getApplicationContext(), "Parrot Purchased", Toast.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content).getRootView(), "Parrot Purchased", Snackbar.LENGTH_SHORT).show();
             } else
-                Toast.makeText(getApplicationContext(), "Cannot Afford Parrot", Toast.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content).getRootView(), "Cannot Afford Parrot", Snackbar.LENGTH_SHORT).show();
         } else if (id == R.id.nav_cupgrade1) {
             if (tree.canAfford("g1")) {
                 tree.genUpgrades[0]++;
                 tree.subtractCoconuts(100);
-                Toast.makeText(getApplicationContext(), "Gloves Purchased", Toast.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content).getRootView(), "Gloves Purchased", Snackbar.LENGTH_SHORT).show();
             } else
-                Toast.makeText(getApplicationContext(), "Cannot Afford Gloves", Toast.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content).getRootView(), "Cannot Afford Gloves", Snackbar.LENGTH_SHORT).show();
         } else if (id == R.id.nav_cupgrade2) {
             if (tree.canAfford("g2")) {
                 tree.genUpgrades[1]++;
                 tree.subtractCoconuts(1000);
-                Toast.makeText(getApplicationContext(), "Shovel Purchased", Toast.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content).getRootView(), "Shovel Purchased", Snackbar.LENGTH_SHORT).show();
             } else
-                Toast.makeText(getApplicationContext(), "Cannot Afford Shovel", Toast.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content).getRootView(), "Cannot Afford Shovel", Snackbar.LENGTH_SHORT).show();
         } else if (id == R.id.nav_cupgrade3) {
             if (tree.canAfford("g3")) {
                 tree.genUpgrades[2]++;
                 tree.subtractCoconuts(10000);
-                Toast.makeText(getApplicationContext(), "Chainsaw Purchased", Toast.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content).getRootView(), "Chainsaw Purchased", Snackbar.LENGTH_SHORT).show();
             } else
-                Toast.makeText(getApplicationContext(), "Cannot Afford Chainsaw", Toast.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content).getRootView(), "Cannot Afford Chainsaw", Snackbar.LENGTH_SHORT).show();
         } else if (id == R.id.nav_cupgrade4) {
             if (tree.canAfford("g4")) {
                 tree.genUpgrades[3]++;
                 tree.subtractCoconuts(100000);
-                Toast.makeText(getApplicationContext(), "Bulldozer Purchased", Toast.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content).getRootView(), "Bulldozer Purchased", Snackbar.LENGTH_SHORT).show();
             } else
-                Toast.makeText(getApplicationContext(), "Cannot Afford Bulldozer", Toast.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content).getRootView(), "Cannot Afford Bulldozer", Snackbar.LENGTH_SHORT).show();
         } else if (id == R.id.nav_cupgrade5) {
             if (tree.canAfford("g5")) {
                 tree.genUpgrades[4]++;
                 tree.subtractCoconuts(1000000);
-                Toast.makeText(getApplicationContext(), "Excavator Purchased", Toast.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content).getRootView(), "Excavator Purchased", Snackbar.LENGTH_SHORT).show();
             } else
-                Toast.makeText(getApplicationContext(), "Cannot Afford Excavator", Toast.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content).getRootView(), "Cannot Afford Excavator", Snackbar.LENGTH_SHORT).show();
         }
         updateView();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -14,11 +14,11 @@
             <item
                 android:id="@+id/nav_gupgrade3"
                 android:icon="@drawable/tiger"
-                android:title="Tiger - Cost:1000" />
+                android:title="Tiger - Cost:1,000" />
             <item
                 android:id="@+id/nav_gupgrade4"
                 android:icon="@drawable/parrot"
-                android:title="Parrot - Cost:10000" />
+                android:title="Parrot - Cost:10,000" />
         </menu>
     </item>
 
@@ -31,19 +31,19 @@
             <item
                 android:id="@+id/nav_cupgrade2"
                 android:icon="@drawable/shovel"
-                android:title="Shovel - Cost:1000" />
+                android:title="Shovel - Cost:1,000" />
             <item
                 android:id="@+id/nav_cupgrade3"
                 android:icon="@drawable/chainsaw"
-                android:title="Chainsaw - Cost:10000" />
+                android:title="Chainsaw - Cost:10,000" />
             <item
                 android:id="@+id/nav_cupgrade4"
                 android:icon="@drawable/bulldozer"
-                android:title="Bulldozer - Cost:100000" />
+                android:title="Bulldozer - Cost:100,000" />
             <item
                 android:id="@+id/nav_cupgrade5"
                 android:icon="@drawable/excavator"
-                android:title="Excavator - Cost:1000000" />
+                android:title="Excavator - Cost:1,000,000" />
         </menu>
     </item>
 

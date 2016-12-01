@@ -2,14 +2,17 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <Preference
         android:key="pref_key_total_coconuts"
-        android:title="@string/pref_title_total_coconuts" />
+        android:title="@string/pref_title_total_coconuts"
+        android:summary="-11 total coconuts"/>
     <Preference
         android:dependency="pref_key_total_coconuts"
         android:key="pref_key_times_clicked"
+        android:summary="-1 times clicked"
         android:title="@string/pref_title_times_clicked" />
     <Preference
         android:dependency="pref_key_coconuts_spent"
         android:key="pref_key_coconuts_spent"
+        android:summary="-1 coconuts spent"
         android:title="@string/pref_title_coconuts_spent" />-->
     <Preference
         android:dependency="pref_key_times_clicked"

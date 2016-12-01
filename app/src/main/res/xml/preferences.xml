@@ -48,8 +48,10 @@
         android:key="pref_key_generate_spent4"
         android:summary="-1 coconuts spent"
         android:title="Excavators" />
+    <PreferenceCategory
     <Preference
         android:key="pref_key_about"
         android:summary="   Nader Kirrish\n   Apoorva Yarrabothula\n   Christian Dwyer"
         android:title="Created by" />
+    >
 </PreferenceScreen>

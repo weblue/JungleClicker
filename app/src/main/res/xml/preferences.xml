@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <Preference
+        android:key="pref_key_total_coconuts"
         android:title="@string/pref_title_total_coconuts"
         android:summary="-1 total coconuts"/>
     <Preference
@@ -14,19 +15,19 @@
     <Preference
         android:key="pref_key_click_upgrades1"
         android:summary="-1 coconuts spent"
-        android:title="@string/pref_title_coconuts_spent" />
+        android:title="Snake" />
     <Preference
         android:key="pref_key_click_upgrades2"
         android:summary="-1 coconuts spent"
-        android:title="@string/pref_title_coconuts_spent" />
+        android:title="Giraffe" />
     <Preference
         android:key="pref_key_click_upgrades3"
         android:summary="-1 coconuts spent"
-        android:title="@string/pref_title_coconuts_spent" />
+        android:title="Tiger" />
     <Preference
         android:key="pref_key_click_upgrades4"
         android:summary="-1 coconuts spent"
-        android:title="@string/pref_title_coconuts_spent" />
+        android:title="Parrot" />
     <Preference
         android:key="pref_key_generate_spent0"
         android:summary="-1 coconuts spent"

@@ -10,16 +10,18 @@ import java.util.Objects;
 
 public class Tree {
 
+    private int totalCoconuts;
+    private int timesClicked;
+
     private int coconuts;
     int[] clickUpgrades = {1, 0, 0, 0, 0};
-    int[] genUpgrades = {0, 0, 0, 0, 0};
+    int[] genUpgrades = {1, 0, 0, 0, 0};
     private TreeListener activity;
  //   private TreeListener.TreeAsyncTask treeAsyncTask;
 
     public Tree(TreeListener activity) {
         this.activity = activity;
 
-        activity.treeAsyncTask.execute();
   //      treeAsyncTask = new TreeListener.TreeAsyncTask();
    //     treeAsyncTask.execute();
 
@@ -27,11 +29,12 @@ public class Tree {
 
         load();
 
-
+        TreeAsyncTask treeAsyncTask = new TreeAsyncTask();
+        treeAsyncTask.execute();
     }
 
     public void save() {
-
+        //TODO
     }
 
     public void load() {
@@ -66,37 +69,38 @@ public class Tree {
 
     public interface TreeListener {
         void updateView();
+    }
 
-        public class TreeAsyncTask extends AsyncTask<Integer, Integer, Void> {
-            @Override
-            protected Void doInBackground(Integer... params) {
-                int interval = 1000;
 
-                        try {
-                            publishProgress();
-                            Thread.sleep(interval);
-                        } catch (Exception ex) {
-                            ex.printStackTrace();
-                        }
+    public class TreeAsyncTask extends AsyncTask<Integer, Integer, Void> {
+        @Override
+        protected Void doInBackground(Integer... params) {
+            int interval = 1000;
 
-                return null;
+            try {
+                publishProgress();
+                Thread.sleep(interval);
+            } catch (Exception ex) {
+                ex.printStackTrace();
             }
 
-            @Override
-            protected void onPostExecute(Void avoid) {
-                super.onPostExecute(avoid);
-            }
-
-            @Override
-            protected void onProgressUpdate(Integer... values) {
-                MainActivity.tree.generate();
-                super.onProgressUpdate(values);
-            }
+            return null;
         }
 
-        TreeAsyncTask treeAsyncTask = new TreeAsyncTask();
+        @Override
+        protected void onPostExecute(Void avoid) {
+            super.onPostExecute(avoid);
+        }
 
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            MainActivity.tree.generate();
+            super.onProgressUpdate(values);
+        }
     }
+
+    //TreeAsyncTask treeAsyncTask = new TreeAsyncTask();
+
     public boolean canAfford(String str){
         if(Objects.equals(str, "c1")){
             return coconuts >= 10;

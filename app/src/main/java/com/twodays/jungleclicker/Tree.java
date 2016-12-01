@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -49,35 +50,21 @@ public class Tree {
     public void save() {
         SharedPreferences sharedPref = activity.getCurrentActivity().getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt("pref_key_total_coconuts", totalCoconuts);
-        editor.putInt("pref_key_coconuts", coconuts);
-        editor.putInt("pref_key_times_clicked", timesClicked);
-        editor.putInt("pref_key_coconuts_spent", coconutsSpent);
-        for(int i = 0;i<5;i++){
-            editor.putInt("pref_key_click_upgrades"+i, clickUpgrades[i]);
-            editor.putInt("pref_key_generate_spent"+i, genUpgrades[i]);
-        }
-        editor.apply();
+        editor.putInt("pref_title_total_coconuts", totalCoconuts);
+        editor.putInt("pref_title_times_clicked", timesClicked);
+        editor.putInt("pref_title_coconuts_spent", coconutsSpent);
+//        for(int i = 0)
+//        editor.putInt("pref_title_click_upgrades", clickUpgrades);
+//        editor.putInt("pref_title_generate_spent", genUpgrades);
+        editor.commit();
     }
 
     public void load() {
         SharedPreferences sharedPref = activity.getCurrentActivity().getPreferences(Context.MODE_PRIVATE);
         int defaultValue = 0;
-        totalCoconuts = sharedPref.getInt("pref_key_total_coconuts", defaultValue);
-        Log.d("tree", totalCoconuts + "total nuts");
-        coconuts = sharedPref.getInt("pref_key_coconuts", defaultValue);
-        coconutsSpent = sharedPref.getInt("pref_key_coconuts_spent", defaultValue);
-        timesClicked = sharedPref.getInt("pref_key_times_clicked", defaultValue);
-        for(int i = 0;i<5;i++){
-            if (i==0){
-                clickUpgrades[i]=sharedPref.getInt("pref_key_click_upgrades"+i, 1);
-                genUpgrades[i]=sharedPref.getInt("pref_key_generate_spent"+i, 1);
-            }
-            else {
-                clickUpgrades[i] = sharedPref.getInt("pref_key_click_upgrades" + i, defaultValue);
-                genUpgrades[i] = sharedPref.getInt("pref_key_generate_spent" + i, defaultValue);
-            }
-        }
+        totalCoconuts = sharedPref.getInt("pref_title_total_coconuts", defaultValue);
+        coconutsSpent = sharedPref.getInt("pref_title_coconuts_spent", defaultValue);
+        timesClicked = sharedPref.getInt("pref_title_times_clicked", defaultValue);
     }
 
     public void click() {
@@ -113,8 +100,8 @@ public class Tree {
         return prevCoconuts;
     }
 
-    public void setPrevCoconuts(int currentCoconuts){
-        this.prevCoconuts = currentCoconuts;
+    public void setPrevCoconuts(int curCoconuts){
+        this.prevCoconuts = curCoconuts;
     }
 
     public int getRate(){
@@ -125,13 +112,13 @@ public class Tree {
         return maxRate;
     }
 
-    public void setMaxRate(int rate){
-        this.maxRate = rate;
+    public void setMaxRate(int newMaxRate){
+        this.maxRate = newMaxRate;
     }
 
     public void rateIncreased(){
-        Toast.makeText(activity.getCurrentActivity(), "You've just generated coconuts faster than ever! :)",
-                Toast.LENGTH_SHORT).show();
+        Snackbar.make(activity.getCurrentActivity().findViewById(android.R.id.content).getRootView(),
+                "You've generated more coconuts than ever! :)", Snackbar.LENGTH_SHORT).show();
     }
 
     public boolean canAfford(String str) {
@@ -178,18 +165,6 @@ public class Tree {
         this.coconutsSpent = coconutsSpent;
     }
 
-    public int getTimesClicked() {
-        return timesClicked;
-    }
-
-    public int[] getClickUpgrades() {
-        return clickUpgrades;
-    }
-
-    public int[] getGenUpgrades() {
-        return genUpgrades;
-    }
-
     public interface TreeListener {
         void updateView();
         Activity getCurrentActivity();
@@ -202,7 +177,13 @@ public class Tree {
 
             while (running) {
                 try {
-                    publishProgress();
+                    int rateIncreased = 0;
+                    if(MainActivity.tree.getRate() > MainActivity.tree.getMaxRate()){
+                        rateIncreased = 1;
+                        MainActivity.tree.setMaxRate(MainActivity.tree.getRate());
+                    }
+                    MainActivity.tree.setPrevCoconuts(MainActivity.tree.getCoconuts());
+                    publishProgress(rateIncreased);
                     Thread.sleep(interval);
                 } catch (Exception ex) {
                     ex.printStackTrace();
@@ -218,6 +199,9 @@ public class Tree {
 
         @Override
         protected void onProgressUpdate(Integer... values) {
+            if(values[0] == 1) {
+                MainActivity.tree.rateIncreased();
+            }
             MainActivity.tree.generate();
             super.onProgressUpdate(values);
         }

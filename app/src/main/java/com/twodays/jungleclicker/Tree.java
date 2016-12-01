@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.util.Objects;
 
@@ -41,21 +42,23 @@ public class Tree {
     public void save() {
         SharedPreferences sharedPref = activity.getCurrentActivity().getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt("pref_title_total_coconuts", totalCoconuts);
-        editor.putInt("pref_title_times_clicked", timesClicked);
-        editor.putInt("pref_title_coconuts_spent", coconutsSpent);
+        editor.putInt("pref_key_total_coconuts", totalCoconuts);
+        editor.putInt("pref_key_times_clicked", timesClicked);
+        editor.putInt("pref_key_coconuts_spent", coconutsSpent);
+
 //        for(int i = 0)
 //        editor.putInt("pref_title_click_upgrades", clickUpgrades);
 //        editor.putInt("pref_title_generate_spent", genUpgrades);
-        editor.commit();
+        editor.apply();
     }
 
     public void load() {
         SharedPreferences sharedPref = activity.getCurrentActivity().getPreferences(Context.MODE_PRIVATE);
         int defaultValue = 0;
-        totalCoconuts = sharedPref.getInt("pref_title_total_coconuts", defaultValue);
-        coconutsSpent = sharedPref.getInt("pref_title_coconuts_spent", defaultValue);
-        timesClicked = sharedPref.getInt("pref_title_times_clicked", defaultValue);
+        totalCoconuts = sharedPref.getInt("pref_key_total_coconuts", defaultValue);
+        Log.d("tree", totalCoconuts + "total nuts");
+        coconutsSpent = sharedPref.getInt("pref_key_coconuts_spent", defaultValue);
+        timesClicked = sharedPref.getInt("pref_key_times_clicked", defaultValue);
     }
 
     public void click() {

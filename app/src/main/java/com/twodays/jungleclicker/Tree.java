@@ -93,4 +93,46 @@ public class Tree {
             }
         }
     }
+    public boolean canAfford(String str){
+        if(str == "c1"){
+            if(coconuts>=10) return true;
+            else return false;
+        }
+        if (str=="c2"){
+            if(coconuts>=100) return true;
+            else return false;
+        }
+        if (str=="c3"){
+            if(coconuts>=1000) return true;
+            else return false;
+        }
+        if (str=="c4"){
+            if(coconuts>=10000) return true;
+            else return false;
+        }
+        if (str=="g1"){
+            if(coconuts>=100) return true;
+            else return false;
+        }
+        if (str=="g2"){
+            if(coconuts>=1000) return true;
+            else return false;
+        }
+        if (str=="g3"){
+            if(coconuts>=10000) return true;
+            else return false;
+        }
+        if (str=="g4"){
+            if(coconuts>=100000) return true;
+            else return false;
+        }
+        if (str=="g5"){
+            if(coconuts>=1000000) return true;
+            else return false;
+        }
+        return false;
+    }
+    public void subtractCoconuts(int cost){
+        coconuts = coconuts - cost;
+    }
 }

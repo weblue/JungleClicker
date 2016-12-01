@@ -1,0 +1,3 @@
+# JungleClicker
+
+A fun game

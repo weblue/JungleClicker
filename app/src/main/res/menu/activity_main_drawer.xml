@@ -5,19 +5,19 @@
         <menu>
             <item
                 android:id="@+id/nav_gupgrade1"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/snakes"
                 android:title="Snake" />
             <item
                 android:id="@+id/nav_gupgrade2"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/giraffe"
                 android:title="Giraffe" />
             <item
                 android:id="@+id/nav_gupgrade3"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/tiger"
                 android:title="Tiger" />
             <item
                 android:id="@+id/nav_gupgrade4"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/parrot"
                 android:title="Parrot" />
         </menu>
     </item>
@@ -26,23 +26,23 @@
         <menu>
             <item
                 android:id="@+id/nav_cupgrade1"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/gloves"
                 android:title="Gloves" />
             <item
                 android:id="@+id/nav_cupgrade2"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/shovel"
                 android:title="Shovel" />
             <item
                 android:id="@+id/nav_cupgrade3"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/chainsaw"
                 android:title="Chainsaw" />
             <item
                 android:id="@+id/nav_cupgrade4"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/bulldozer"
                 android:title="Bulldozer" />
             <item
                 android:id="@+id/nav_cupgrade5"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/excavator"
                 android:title="Excavator" />
         </menu>
     </item>

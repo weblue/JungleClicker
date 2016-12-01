@@ -164,6 +164,7 @@ public class MainActivity extends AppCompatActivity
     public void updateView() {
         //TODO update clicker total
         mTextViewCoconuts.setText("Coconuts: " + formatter.format(tree.getCoconuts()));
-        mTextViewGenAmt.setText(formatter.format(tree.calcClick()) + " per click");
+        mTextViewClickAmt.setText(formatter.format(tree.calcClick()) + " per click");
+        mTextViewGenAmt.setText(formatter.format(tree.calcGen()) + " per second");
     }
 }

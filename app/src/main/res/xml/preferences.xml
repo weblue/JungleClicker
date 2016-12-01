@@ -12,7 +12,39 @@
         android:summary="-1 coconuts spent"
         android:title="@string/pref_title_coconuts_spent" />
     <Preference
-        android:key="pref_key_gen_spent4"
+        android:key="pref_key_click_upgrades1"
+        android:summary="-1 coconuts spent"
+        android:title="@string/pref_title_coconuts_spent" />
+    <Preference
+        android:key="pref_key_click_upgrades2"
+        android:summary="-1 coconuts spent"
+        android:title="@string/pref_title_coconuts_spent" />
+    <Preference
+        android:key="pref_key_click_upgrades3"
+        android:summary="-1 coconuts spent"
+        android:title="@string/pref_title_coconuts_spent" />
+    <Preference
+        android:key="pref_key_click_upgrades4"
+        android:summary="-1 coconuts spent"
+        android:title="@string/pref_title_coconuts_spent" />
+    <Preference
+        android:key="pref_key_generate_spent0"
+        android:summary="-1 coconuts spent"
+        android:title="@string/pref_title_coconuts_spent" />
+    <Preference
+        android:key="pref_key_generate_spent1"
+        android:summary="-1 coconuts spent"
+        android:title="@string/pref_title_coconuts_spent" />
+    <Preference
+        android:key="pref_key_generate_spent2"
+        android:summary="-1 coconuts spent"
+        android:title="@string/pref_title_coconuts_spent" />
+    <Preference
+        android:key="pref_key_generate_spent3"
+        android:summary="-1 coconuts spent"
+        android:title="@string/pref_title_coconuts_spent" />
+    <Preference
+        android:key="pref_key_generate_spent4"
         android:summary="-1 coconuts spent"
         android:title="@string/pref_title_coconuts_spent" />
     <Preference

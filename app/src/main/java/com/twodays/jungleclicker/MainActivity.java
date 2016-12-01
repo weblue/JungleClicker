@@ -19,16 +19,18 @@ import android.widget.TextView;
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, Tree.TreeListener {
 
     private Tree tree;
+    private DecimalFormat formatter;
+    private TextView mTextViewCoconuts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tree = new Tree();
+        tree = new Tree(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -52,17 +54,17 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        final TextView mTextViewCoconuts = (TextView) findViewById(R.id.tv_coconuts);
+        formatter = new DecimalFormat("###,###,###,###");
+        mTextViewCoconuts = (TextView) findViewById(R.id.tv_coconuts);
 
-        final DecimalFormat formatter = new DecimalFormat("###,###,###,###");
+        mTextViewCoconuts.setText(formatter.format(tree.getCoconuts()));
 
         ImageView imageViewTree = (ImageView) findViewById(R.id.iv_tree);
         imageViewTree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 view.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shift));
-                tree.inc();
-                mTextViewCoconuts.setText(formatter.format(Integer.toString(tree.getCoconuts())));
+                tree.click();
             }
         });
     }
@@ -122,5 +124,10 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void updateView() {
+        //TODO update clicker total
+        mTextViewCoconuts.setText(formatter.format(tree.getCoconuts()));
     }
 }

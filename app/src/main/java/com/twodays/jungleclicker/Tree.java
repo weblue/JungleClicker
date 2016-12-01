@@ -9,8 +9,11 @@ public class Tree {
     private int coconuts;
     int[] clickUpgrades = {0, 0, 0, 0, 0};
     int[] genUpgrades = {0, 0, 0, 0, 0};
+    private TreeListener activity;
 
-    public Tree() {
+    public Tree(TreeListener activity) {
+        this.activity = activity;
+
         coconuts = 0;
 
         load();
@@ -24,12 +27,24 @@ public class Tree {
 
     }
 
-    public void inc() {
+    public void click() {
 
+        coconuts++;
+
+        activity.updateView();
+    }
+
+    public void generate() {
+
+        activity.updateView();
     }
 
 
     public int getCoconuts() {
         return coconuts;
+    }
+
+    public interface TreeListener {
+        void updateView();
     }
 }
